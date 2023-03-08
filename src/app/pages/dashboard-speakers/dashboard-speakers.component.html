@@ -1,0 +1,32 @@
+<ng-container *ngIf="isLoading; else elseTemplate">
+    <app-loading-spinner [showSpinner]="isLoading"></app-loading-spinner>
+  </ng-container>
+   <ng-template #elseTemplate>
+    <div>
+        <div class="row">
+          <app-search-bar
+            class="col align-self-center search"
+            (valueChange)="searchSpeakers($event)"
+          ></app-search-bar>
+          <mat-paginator
+            class="col loader"
+            [length]="searchedSpeakers.length"
+            [pageSize]="numberOfSpeakersPerPage"
+            (page)="updateGrid($event)"
+          >
+          </mat-paginator>
+        </div>
+        <mat-grid-list cols="3" rowHeight="1.5:1" gutterSize="10px">
+          <mat-grid-tile class="tile-section"
+            *ngFor="let speaker of searchedSpeakers | slice: firstIndex: lastIndex">
+              <app-speaker-card [speaker]="speaker"></app-speaker-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </ng-template>
+
+
+
+      
+    
+  
