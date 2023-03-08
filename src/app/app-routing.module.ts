@@ -5,12 +5,21 @@ import { SpeakerInfoComponent } from './pages/speaker-info/speaker-info.componen
 
 const routes: Routes = [
   {
+    path:'',
+    redirectTo:'/speakers',
+    pathMatch:'full'
+  },
+  {
     path:'speakers',
     component: DashboardSpeakersComponent
   },
   {
     path: 'speaker-info', 
     component: SpeakerInfoComponent
+  },
+  {
+    path:'**',
+    redirectTo:'/speakers'
   }
 ];
 
