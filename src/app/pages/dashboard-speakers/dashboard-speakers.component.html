@@ -17,10 +17,10 @@
           </mat-paginator>
         </div>
         <mat-grid-list cols="3" rowHeight="1.5:1" gutterSize="10px">
-          <mat-grid-tile class="tile-section"
+            <mat-grid-tile class="tile-section"
             *ngFor="let speaker of searchedSpeakers | slice: firstIndex: lastIndex">
               <app-speaker-card [speaker]="speaker"></app-speaker-card>
-          </mat-grid-tile>
+          </mat-grid-tile> 
         </mat-grid-list>
       </div>
     </ng-template>

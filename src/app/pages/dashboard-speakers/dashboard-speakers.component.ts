@@ -29,7 +29,9 @@ export class DashboardSpeakersComponent implements OnInit {
         this.isLoading = true;
         this.speakers = data.results;
         this.searchedSpeakers = data.results;
-        this.numberOfSpeakersFeatured = this.speakers.length;
+        console.log('****',typeof(this.speakers))
+        this.numberOfSpeakersFeatured = this.speakers?.length;
+        console.log('Length',this.numberOfSpeakersFeatured)
         if(this.speakers.length) {
           this.isLoading = false;
         }

@@ -43,6 +43,7 @@ export class SpeakerInfoComponent {
 
           if(data) {
             this.speaker = this.speakers.find(item =>item.email === this.speakerToBeViewed);
+            console.log('((((',this.speaker)
             if (!Boolean(this.speaker)) { this.redirectToSpeakersPage(); }
             this.isLoading = false;
             this.patchExistingValues();
@@ -57,10 +58,10 @@ export class SpeakerInfoComponent {
 
   patchExistingValues() {
     this.editSpeakerForm.patchValue({
-      cell: this.speaker.cell,
-      phone: this.speaker.phone,
-      state: this.speaker.location.state,
-      country: this.speaker.location.country
+      cell: this.speaker?.cell,
+      phone: this.speaker?.phone,
+      state: this.speaker?.location?.state,
+      country: this.speaker?.location?.country
     });
   }
 }

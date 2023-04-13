@@ -76,17 +76,11 @@ export interface Login {
 }
 
 export interface Name {
-    title: Title;
+    title: string;
     first: string;
     last:  string;
 }
 
-export enum Title {
-    MS = "Ms",
-    Miss = "Miss",
-    Mr = "Mr",
-    Mrs = "Mrs",
-}
 
 export interface Picture {
     large:     string;

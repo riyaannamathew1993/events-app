@@ -4,10 +4,10 @@
           <img
             mat-card-avatar
             class="header-image"
-            src="{{ speaker.picture.large }}"
+            src="{{ speaker?.picture?.large }}"
           />
-          <mat-card-title>{{speaker.name.title}}. {{ speaker.name.first }} {{speaker.name.last}}</mat-card-title>
-          <mat-card-subtitle>{{ speaker.email }}</mat-card-subtitle>
+          <mat-card-title>{{speaker?.name?.title}}. {{ speaker?.name?.first }} {{speaker?.name?.last}}</mat-card-title>
+          <mat-card-subtitle>{{ speaker?.email }}</mat-card-subtitle>
         </mat-card-header>
         <form [formGroup]="editSpeakerForm">
           <div class="form-group">
